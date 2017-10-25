@@ -9,7 +9,7 @@ library(plotly)
 # You can create a GitHub PAT here: https://github.com/settings/tokens
 Sys.setenv(GITHUB_PAT = "")
 
-runconf17 <- gh("/repos/ropensci/unconf17/issues", .limit = Inf, .send_headers = c(Accept = "application/vnd.github.squirrel-girl-preview
+runconf17 <- gh("/repos/ropensci/ozunconf17/issues", .limit = Inf, .send_headers = c(Accept = "application/vnd.github.squirrel-girl-preview
 "))
 
 create_link <- function(url_, text_){
@@ -25,7 +25,7 @@ runconf17_tbl <- map_df(runconf17, ~ tibble(
                            Comments = .x$comments))
 
 ui <- fluidPage(
-  titlePanel("Browse runconf17 Projects"),
+  titlePanel("Browse ozrunconf17 Projects"),
   verticalLayout(
     tabsetPanel(
       tabPanel("Table", dataTableOutput("tbl")),
